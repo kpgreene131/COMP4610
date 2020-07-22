@@ -1,0 +1,113 @@
+/*
+File: /~kgreene/public_html/css/styles.css
+Kevin Greene, kevin_greene@student.uml.edu
+Student of Umass Lowell Computer Science,
+in course COMP 4610 GUI Programming I Sec 021
+File created: 7/11/2020
+Description: This file is used for styling of my
+webpage.
+*/
+
+/*This just sets a background color for the page */
+body{
+  background-color: #FAF4E4;
+}
+
+/* Here is formatting for the header grid, so the two blocks
+ are side-by-side */
+.myHeader {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+
+/* Here is formatting for the Title box */
+.myTitle{
+  background-color: #9FA5D8;
+  border:5px #2E314D solid;
+
+  padding: 0px 20px;
+  margin:auto;
+  margin:10px;
+  margin-top: 60px;
+
+  font-family:helvetica;
+  text-align: center;
+
+}
+
+/* And formatting for the info box */
+.myInfo {
+  background-color: #9FA5D8;
+  border:5px #2E314D solid;
+  font-family:helvetica;
+
+  padding: 0px 20px;
+  margin:auto;
+  margin:10px;
+  margin-top: 60px;
+
+  text-align: center;
+}
+
+/* this code fixes the link list to the top of the page */
+.myLinks{
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+}
+
+/* Styling for the whole list (take away bullet points, margin/padding, etc) */
+.myLinks ul{
+  list-style-type: none;
+  margin:0;
+  padding:0;
+  background-color: #2E314D;
+  overflow:hidden;
+}
+
+/* Allow links to sit side-by-side */
+.myLinks li{
+  float: left;
+}
+
+/* styling for links themselves. Style the text itself for color
+  and to take away underlines, aligns them in their boxes, etc */
+.myLinks a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding:20px;
+  text-decoration: none;
+  font-family: helvetica;
+}
+
+/* Allow links to "light up" when scrolled over. Lightens background
+    and darkens text */
+.myLinks a:hover{
+  background-color: #9FA5D8;
+  color: black;
+}
+
+/* Style my "about me" section to have its own box */
+.myIntro {
+  font-family: helvetica;
+  border:3px #2E314D solid;
+  padding:10px;
+  padding-bottom: 200px;
+  margin:10px;
+  background-color: #e4e6f7;
+}
+
+.myIntro h2 {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+/* Put the uml logo to the left of my text in the intro box */
+.myIntro img {
+  float:left;
+  width:200px;
+  padding:10px;
+}
