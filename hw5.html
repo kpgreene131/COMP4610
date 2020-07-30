@@ -1,3 +1,17 @@
+<!--
+File: hw5.html
+Kevin Greene, kevin_greene@student.uml.edu
+Student of Umass Lowell Computer Science,
+in course COMP 4610 GUI Programming I Sec 021
+File created: 7/29/2020
+Description: This file is my page for homework 5,
+    where I create a times table based on user input.
+    The user is asked to input start and ends for
+    the horizontal and vertical ranges of the table.
+    There is validation to make sure the inputs are
+    numbers, and that they aren't left empty.
+-->
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,68 +25,90 @@
     <title>Kevin Greene's Webpage</title>
   </head>
 
-<body>
-  <!-- navbar template from getbootstrap.com/docs/4.0/components/navbar/ -->
-  <!-- nav links will move to drop down menu on screens smaller than medium -->
-    <nav class="navbar navbar-expand-md navbar-dark">
-        <a class="navbar-brand" href="index.html">Kevin's Website</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <body>
+      <!-- navbar template from getbootstrap.com/docs/4.0/components/navbar/ -->
+      <!-- nav links will move to drop down menu on screens smaller than medium -->
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <a class="navbar-brand" href="index.html">Kevin's Website</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="hw2.html">HW2</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="pacific.html">HW3</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="hw5.html">HW5</a>
-                </li>
-            </ul>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hw2.html">HW2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pacific.html">HW3</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="hw5.html">HW5</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Title for the page -->
+        <div class= "container-fluid">
+            <div class="jumbotron">
+                <h1 class ="display-2 text-center"> Dynamic Times Table </h1>
+                <hr>
+                <p class="lead text-center">Enter ranges to create a times table</p>
+            </div>
         </div>
-    </nav>
 
-    <!-- Title for the page -->
-    <div class= "container-fluid">
-        <div class="jumbotron">
-            <h1 class ="display-2 text-center"> Dynamic Times Table </h1>
-            <hr>
-            <p class="lead text-center">Enter ranges to create a times table</p>
+        <div class="container" id="descr-form">
+            <div class="row">
+                <!-- description of app, and instructions -->
+                <div class="col-md-6">
+                    <p>This application will create a multiplication table for you.</p>
+                    <p>The first two numbers will be the start and end of the horizontal axis,
+                      and the next two will be the start and end of the vertical axis.
+                      These axes will be incremented by 1. </p>
+                    <p>Once you enter 4 valid numbers and press Submit, a times table will
+                      be created with the given ranges. </p>
+                    <hr>
+                </div>
+                <!-- form for user to enter table ranges -->
+                <form class="col-md-6" id="timesTableForm">
+                    <div class="form-group">
+                        <label for="pair1number1">Start of range for multipliers</label>
+                        <input type="number" class="form-control" id="pair1number1" placeholder="Enter number">
+                    </div>
+                    <p id="xStartMessage"><p>
+                    <div class="form-group">
+                        <label for="pair1number2">End of range for multipliers</label>
+                        <input type="number" class="form-control" id="pair1number2" placeholder="Enter number">
+                    </div>
+                    <p id="xEndMessage"><p>
+                    <div class="form-group">
+                        <label for="pair2number1">Start of range for multiplicands</label>
+                        <input type="number" class="form-control" id="pair2number1" placeholder="Enter number">
+                    </div>
+                    <p id="yStartMessage"><p>
+                    <div class="form-group">
+                        <label for="pair2number2">End of range for multiplicands</label>
+                        <input type="number" class="form-control" id="pair2number2" placeholder="Enter number">
+                    </div>
+                    <p id="yEndMessage"><p>
+                    <button type="button" class="btn btn-primary"  onclick="return readInput();">Submit</button>
+                    <p id="validationMessage"></p>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <div class="container">
-        <div class="row">
-            <!-- form for user to enter table ranges -->
-            <form class="col-md-4">
-                <div class="form-group">
-                    <label for="pair1number1">Start of range for multipliers</label>
-                    <input type="number" class="form-control" id="pair1number1" placeholder="Enter number">
-                </div>
-                <div class="form-group">
-                    <label for="pair1number2">End of range for multipliers</label>
-                    <input type="number" class="form-control" id="pair1number2" placeholder="Enter number">
-                </div>
-                <div class="form-group">
-                    <label for="pair2number1">Start of range for multiplicands</label>
-                    <input type="number" class="form-control" id="pair2number1" placeholder="Enter number">
-                </div>
-                <div class="form-group">
-                    <label for="pair2number2">End of range for multiplicands</label>
-                    <input type="number" class="form-control" id="pair2number2" placeholder="Enter number">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+        <div class="container">
+            <table id="multTable"></table>
         </div>
-    </div>
 
-</body>
+        <script src="js/mult-table.js"></script>
+
+    </body>
+</html>

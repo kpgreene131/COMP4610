@@ -6,6 +6,11 @@ in course COMP 4610 GUI Programming I Sec 021
 File created: 7/22/2020
 Description: This file styles some of the bootstrap
   elements of my webpage
+
+Updated: 7/29/2020
+Note: I have updated this file to also style aspects of my
+    hw5, such as the form and error messages, and the
+    times table.
 */
 
 /* background color for entire page */
@@ -31,4 +36,53 @@ body{
 /* margin under the cards, so they have some space when they stack vertically */
 .card {
     margin-bottom: 20px;
+}
+
+#descr-form{
+    background-color: #e4e6f7;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+/* all validation messages for the times table form are red, to be seen as alerts */
+#validationMessage, #xStartMessage, #xEndMessage, #yStartMessage, #yEndMessage {
+    color:red;
+}
+
+/* styling for the entire times table */
+#multTable {
+    width: auto;
+    margin: auto;
+    margin-top: 20px;
+}
+
+/* styling for each individual element */
+#multTable td {
+    border:2px solid #2E314D;
+    text-align: right;
+    background-color: white;
+    padding:2px;
+    width:30px;
+}
+
+/* Styling for every other element and row, to create a kind of tile
+    layout for easier reading. */
+#multTable td:nth-child(odd), #multTable tr:nth-child(odd) td{
+    background-color: #e4e6f7;
+}
+
+/* Styling for the top row of the table */
+#multTable tbody tr:first-child td {
+    background-color: #2E314D;
+    color: white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+
+/* Styling for the left side column */
+#multTable tbody tr td:first-child {
+    background-color: #2E314D;
+    color: white;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
 }
