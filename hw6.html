@@ -83,25 +83,22 @@ Description: This file is my page for homework 5,
                 <form class="col-md-6" id="timesTableForm">
                     <div class="form-group">
                         <label for="pair1number1">Start of range for multipliers</label>
-                        <input type="number" class="form-control" id="pair1number1" placeholder="Enter number">
+                        <input type="number" class="form-control" name="pair1number1" id="pair1number1" placeholder="Enter number" required>
                     </div>
-                    <p id="xStartMessage"><p>
                     <div class="form-group">
                         <label for="pair1number2">End of range for multipliers</label>
-                        <input type="number" class="form-control" id="pair1number2" placeholder="Enter number">
+                        <input type="number" class="form-control" name="pair1number2" id="pair1number2" placeholder="Enter number" required>
                     </div>
-                    <p id="xEndMessage"><p>
                     <div class="form-group">
                         <label for="pair2number1">Start of range for multiplicands</label>
-                        <input type="number" class="form-control" id="pair2number1" placeholder="Enter number">
+                        <input type="number" class="form-control" name="pair2number1" id="pair2number1" placeholder="Enter number" required>
                     </div>
-                    <p id="yStartMessage"><p>
                     <div class="form-group">
                         <label for="pair2number2">End of range for multiplicands</label>
-                        <input type="number" class="form-control" id="pair2number2" placeholder="Enter number">
+                        <input type="number" class="form-control" name="pair2number2" id="pair2number2" placeholder="Enter number" required>
                     </div>
                     <p id="yEndMessage"><p>
-                    <button type="button" class="btn btn-primary"  onclick="return readInput();">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                     <p id="validationMessage"></p>
                 </form>
             </div>
@@ -111,7 +108,11 @@ Description: This file is my page for homework 5,
             <table id="multTable"></table>
         </div>
 
-        <script src="js/mult-table.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+        <script src="js/hw6-validate.js"></script>
+        <script src="js/mult-table-no-validation.js"></script>
+
 
     </body>
 </html>

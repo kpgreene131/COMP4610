@@ -45,7 +45,7 @@ body{
 }
 
 /* all validation messages for the times table form are red, to be seen as alerts */
-#validationMessage, #xStartMessage, #xEndMessage, #yStartMessage, #yEndMessage {
+#validationMessage, #xStartMessage, #xEndMessage, #yStartMessage, #yEndMessage, .error {
     color:red;
 }
 
