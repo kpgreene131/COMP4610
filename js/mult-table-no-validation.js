@@ -1,22 +1,24 @@
 /*
-File: mult-table.js
+File: mult-table-no-validation.js
 Kevin Greene, kevin_greene@student.uml.edu
 Student of Umass Lowell Computer Science,
 in course COMP 4610 GUI Programming I Sec 021
-File created: 7/29/2020
+File created: 8/4/2020
 Description: This is the javascript file for my dynamic times table.
     The functions here will take input from the form on my hw5.html page
     and create a times table with these given ranges. They also check to
     make sure there are no empty inputs.
+
+    For hw6, validation is taken out bc this is handled by jquery
 */
 function submitForm() {
 
     document.getElementById("validationMessage").innerHTML = "";
 
-    xStart = document.getElementById('pair1number1').value;
-    xEnd = document.getElementById('pair1number2').value;
-    yStart = document.getElementById('pair2number1').value;
-    yEnd = document.getElementById('pair2number2').value;
+    xStart = Number(document.getElementById('pair1number1').value);
+    xEnd = Number(document.getElementById('pair1number2').value);
+    yStart = Number(document.getElementById('pair2number1').value);
+    yEnd = Number(document.getElementById('pair2number2').value);
 
     if(xStart > xEnd) {
         var temp = xStart;
@@ -33,7 +35,7 @@ function submitForm() {
 
     createMultTable(xStart, xEnd, yStart, yEnd);
 
-    return;
+    return false;
 }
 
 function createMultTable(xStart, xEnd, yStart, yEnd) {
