@@ -11,9 +11,5 @@ Description: This file uses the jquery validation plugin
 
 $(document).ready(function () {
     $("#timesTableForm").validate({
-        submitHandler: function (form, event) {
-            event.preventDefault();
-            saveTable();
-        }
     });
 })
