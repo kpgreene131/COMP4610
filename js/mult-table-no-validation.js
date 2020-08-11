@@ -24,13 +24,13 @@ function submitForm() {
         var temp = xStart;
         xStart = xEnd;
         xEnd = temp;
-        document.getElementById("validationMessage").innerHTML = "Swapping multiplier start and end<br>";
+        document.getElementById("validationMessage").innerHTML = "Swapping multiplier start (" + xStart + ") and end (" + xEnd + ")<br>";
     }
     if(yStart > yEnd) {
         var temp = yStart;
         yStart = yEnd;
         yEnd = temp;
-        document.getElementById("validationMessage").innerHTML += "Swapping multiplicand start and end";
+        document.getElementById("validationMessage").innerHTML += "Swapping multiplicand start (" + yStart + ") and end (" + xEnd + ")";
     }
 
     createMultTable(xStart, xEnd, yStart, yEnd);

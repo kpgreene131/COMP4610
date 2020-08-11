@@ -54,6 +54,7 @@ body{
     width: auto;
     margin: auto;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /* styling for each individual element */
@@ -85,4 +86,12 @@ body{
     color: white;
     border-top: 2px solid white;
     border-bottom: 2px solid white;
+}
+
+#timesTableForm input {
+
+}
+
+#timesTableForm slider {
+
 }
