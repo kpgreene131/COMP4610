@@ -88,10 +88,44 @@ body{
     border-bottom: 2px solid white;
 }
 
-#timesTableForm input {
-
+img.scrabble {
+    width:55px;
+    margin: 5px;
 }
 
-#timesTableForm slider {
+div.boardSpace {
+    width:74px;
+    height: 71px;
+    border:5px solid #ede8da;
+    float:left;
+    margin:auto;
+}
 
+div.blankSpace {
+    background-image: url("../images/ScrabbleBoardBlank.png");
+}
+
+div.doubleWord {
+    background-image: url("../images/ScrabbleDoubleWord.png");
+}
+
+div.doubleLetter {
+    background-image: url("../images/ScrabbleDoubleLetter.png");
+}
+
+br#separator {
+    clear:both;
+}
+
+#board, #rack {
+    margin:auto;
+    width:700px;
+}
+
+#board {
+    display: flex;
+    margin-top:30px;
+    margin-bottom:20px;
+    height:100px;
+    justify-content: center;
 }

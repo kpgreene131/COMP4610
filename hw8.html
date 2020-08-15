@@ -1,15 +1,14 @@
 <!--
-File: /~kgreene/public_html/index.html
+File: hw8.html
 Kevin Greene, kevin_greene@student.uml.edu
 Student of Umass Lowell Computer Science,
 in course COMP 4610 GUI Programming I Sec 021
-File created: 7/22/2020
-Description: This file is a remade version of my original homepage,
-    this time using bootstrap styling. I have included bootstrap
-    for the navbar, the header and text styling, and for other page contents
+File created: 8/14/2020
+Description: This is the html file for hw8,
+  the one-line scrabble game
 -->
 
-<!doctype html>
+doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -60,61 +59,60 @@ Description: This file is a remade version of my original homepage,
             </ul>
           </div>
         </nav>
-
-        <!-- Container that holds the header of the page -->
-        <div class = "container-fluid">
-            <div class="jumbotron">
-                <div class="row">
-                <!-- separated title box -->
-                <!-- on large displays, we will see the "Welcome" and info next to each other.
-                    on medium and smaller displays, they will stack vertically -->
-                    <div class = "col-lg-8">
-                        <h1 class ="display-2 text-center">Welcome!</h1>
-                        <hr>
-                        <p class="lead text-center">Kevin Greene's First Webpage!</p>
-
-                    </div>
-                    <!-- separate info box -->
-                    <div class="col-lg-4">
-                        <div class = "container pt-4">
-                            <hr>
-                            <p>Kevin Greene</p>
-                            <p>kevin_greene@student.uml.edu</p>
-                            <p>COMP 4610 GUI Programming I Sec 021</p>
-                            <p>Summer II 2020</p>
-                            <hr>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="jumbotron text-center">
+            <h1 class="display-1">One-line Scrabble!</h1>
         </div>
-
-        <!-- container for cards that will link to different homework projects, with image previews -->
         <div class="container">
             <div class="row">
-                <div class="card mx-auto" style="width: 18rem;">
-                    <img class="card-img-top" src="images/hw2.PNG" alt="HW2">
-                    <div class="card-body">
-                        <h5 class="card-title">HW2: Original Homepage</h5>
-                        <p class="card-text">This page is the first iteration of the webpage you are on now.</p>
-                        <a href="hw2.html" class="btn btn-primary">Check it out</a>
-                    </div>
-                </div>
-                <div class="card mx-auto" style="width: 18rem;">
-                    <img class="card-img-top" src="images/hw3.PNG" alt="HW3">
-                    <div class="card-body">
-                        <h5 class="card-title">HW3: Pacific Trails Resort</h5>
-                        <p class="card-text">This page was an exercise in CSS, where I used styling to copy an example webpage.</p>
-                        <a href="pacific.html" class="btn btn-primary">Check it out</a>
-                    </div>
-                </div>
+              <div class="col-4 text-center">
+                  <h3>Total Score: </h3> <h5 id="totalScore"></h5>
+              </div>
+              <div class="col-4 text-center">
+                  <h3>Word Score: </h3> <h5 id="wordScore"></h5>
+              </div>
+              <div class="col-4 text-center">
+                  <h3>Letters Remaining: </h3> <h5 id="lettersRemaining"></h5>
+              </div>
+            </div>
+
+            <div id="board" class="text-center">
+                <div class="boardSpace blankSpace" id="space0"
+                    draggable="false" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+                <div class="boardSpace doubleWord" id="space1"
+                    draggable="false" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+                <div class="boardSpace blankSpace" id="space2"
+                    draggable="false" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+                <div class="boardSpace blankSpace" id="space3"
+                    draggable="false" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+                <div class="boardSpace blankSpace" id="space4"
+                    draggable="false" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+                <div class="boardSpace doubleLetter" id="space5"
+                    draggable="false" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+                <div class="boardSpace blankSpace" id="space6"
+                    draggable="false" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+            </div>
+            <br id="separator">
+            <div id="rack" class="text-center">
+                    <img id="letter0" class="scrabble" draggable="true" ondragstart="drag(event)"></img>
+                    <img id="letter1" class="scrabble" draggable="true" ondragstart="drag(event)"></img>
+                    <img id="letter2" class="scrabble" draggable="true" ondragstart="drag(event)"></img>
+                    <img id="letter3" class="scrabble" draggable="true" ondragstart="drag(event)"></img>
+                    <img id="letter4" class="scrabble" draggable="true" ondragstart="drag(event)"></img>
+                    <img id="letter5" class="scrabble" draggable="true" ondragstart="drag(event)"></img>
+                    <img id="letter6" class="scrabble" draggable="true" ondragstart="drag(event)"></img>
+            </div>
+            <br id="separator">
+            <div class="text-center">
+                <button type="button" class="btn btn-primary" id="submitWord" onclick="submitWord()">Submit Word</button>
             </div>
         </div>
+
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="js/scrabble.js"></script>
     </body>
 </html>
