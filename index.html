@@ -1,14 +1,3 @@
-<!--
-File: /~kgreene/public_html/index.html
-Kevin Greene, kevin_greene@student.uml.edu
-Student of Umass Lowell Computer Science,
-in course COMP 4610 GUI Programming I Sec 021
-File created: 7/22/2020
-Description: This file is a remade version of my original homepage,
-    this time using bootstrap styling. I have included bootstrap
-    for the navbar, the header and text styling, and for other page contents
--->
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,103 +7,141 @@ Description: This file is a remade version of my original homepage,
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
-    <title>Kevin Greene's Webpage</title>
+    <title>Recyclapedia Home</title>
+	<link rel = "stylesheet" href="css/styles.css">
+
   </head>
   <body>
+      <div class="row"> <!-- parent row. contains sidebar + rest of page -->
+          <!-- Vertical navbar on side of page -->
+              <!-- navbar template from getbootstrap.com/docs/4.0/components/navbar/ -->
+              <!-- nav links will move to drop down menu on screens smaller than medium -->
+          <nav class="navbar navbar-expand-md navbar-dark">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
 
-    <!-- navbar template from getbootstrap.com/docs/4.0/components/navbar/ -->
-    <!-- nav links will move to drop down menu on screens smaller than medium -->
-      <nav class="navbar navbar-expand-md navbar-dark">
-          <a class="navbar-brand" href="index.html">Kevin's Website</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto flex-column">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Metal</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Plastic</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Glass</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Paper/Carton</a>
+                  </li>
+                  </li>
+                </ul>
+              </div>
+            </nav>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="hw2.html">HW2</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pacific.html">HW3</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="hw5.html">HW5</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="hw6.html">HW6</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="hw7.html">HW7</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="hw8.html">HW8</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+          <div class="content container"> <!-- all of page besides sidebar -->
+              <div class="row">
+                  <div class="col-12">
+                      <div class="jumbotron jumbotron-fluid">
+                          <div class="container">
+                              <h1 class="display-4">Recyclapedia</h1>
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
-        <!-- Container that holds the header of the page -->
-        <div class = "container-fluid">
-            <div class="jumbotron">
-                <div class="row">
-                <!-- separated title box -->
-                <!-- on large displays, we will see the "Welcome" and info next to each other.
-                    on medium and smaller displays, they will stack vertically -->
-                    <div class = "col-lg-8">
-                        <h1 class ="display-2 text-center">Welcome!</h1>
-                        <hr>
-                        <p class="lead text-center">Kevin Greene's First Webpage!</p>
 
-                    </div>
-                    <!-- separate info box -->
-                    <div class="col-lg-4">
-                        <div class = "container pt-4">
-                            <hr>
-                            <p>Kevin Greene</p>
-                            <p>kevin_greene@student.uml.edu</p>
-                            <p>COMP 4610 GUI Programming I Sec 021</p>
-                            <p>Summer II 2020</p>
-                            <hr>
+
+<!-- This section is for the animated images-->
+
+              <div class="wrap container">
+          	       <div class="tile mx-auto">
+            	        <img src='images/cardboard.jpg'/>
+            	        <div class="text">
+                  		    <h1>Lorem ipsum.</h1>
+                  		    <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+                  		    <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
+                  		    <div class="dots">
+                  		        <span></span>
+                  		        <span></span>
+                  		        <span></span>
+              		        </div>
+          	        </div>
+                </div>
+
+
+                <div class="tile mx-auto">
+                    <img src='images/Glass.png'/>
+                    <div class="text">
+                        <h1>Lorem ipsum.</h1>
+                        <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+                        <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
+                        <div class="dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- container for cards that will link to different homework projects, with image previews -->
-        <div class="container">
-            <div class="row">
-                <div class="card mx-auto" style="width: 18rem;">
-                    <img class="card-img-top" src="images/hw2.PNG" alt="HW2">
-                    <div class="card-body">
-                        <h5 class="card-title">HW2: Original Homepage</h5>
-                        <p class="card-text">This page is the first iteration of the webpage you are on now.</p>
-                        <a href="hw2.html" class="btn btn-primary">Check it out</a>
+                <div class="tile mx-auto">
+                    <img src='images/Aluminium-packaging-2015.jpg'/>
+                    <div class="text">
+                        <h1>Lorem ipsum.</h1>
+                        <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+                        <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
+                        <div class="dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </div>
                 </div>
-                <div class="card mx-auto" style="width: 18rem;">
-                    <img class="card-img-top" src="images/hw3.PNG" alt="HW3">
-                    <div class="card-body">
-                        <h5 class="card-title">HW3: Pacific Trails Resort</h5>
-                        <p class="card-text">This page was an exercise in CSS, where I used styling to copy an example webpage.</p>
-                        <a href="pacific.html" class="btn btn-primary">Check it out</a>
+
+
+                <div class="tile mx-auto">
+                    <img src='images/metals.jpg'/>
+                    <div class="text">
+                        <h1>Lorem ipsum.</h1>
+                        <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+                        <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
+                        <div class="dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    </body>
+                <div class="tile mx-auto">
+                      <img src='images/PET-bottles2.jpg'/>
+                      <div class="text">
+                          <h1>Lorem ipsum.</h1>
+                          <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+                          <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
+                          <div class="dots">
+                              <span></span>
+                              <span></span>
+                              <span></span>
+                          </div>
+                      </div>
+                      <a href="materials.html"></a>
+                </div>
+
+            </div> <!-- close div for wrap -->
+
+          </div> <!-- close div for entire page minus sidebar -->
+      </div>  <!-- parent row close div. contains sidebar + rest of page -->
+
+
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+      <script src="js/click_tiles.js"></script>
+  </body>
 </html>
